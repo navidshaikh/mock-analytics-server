@@ -10,7 +10,7 @@ def receive_register():
     if not request.json:
         abort(400)
     response = {
-        "email_ids": request.json.get("email_ids", "email ids not given"),
+        "email-ids": request.json.get("email-ids", "email ids not given"),
         "git-sha": request.json.get("git-sha", "git-sha not given"),
         "git-url": request.json.get("git-url", "git-url not given")
     }
@@ -23,7 +23,7 @@ def receive_error():
     if not request.json:
         abort(400)
     response = {
-        "email_ids": request.json.get("email_ids", "email ids not given"),
+        "email-ids": request.json.get("email-ids", "email ids not given"),
         "image-name": request.json.get("image-name", "image-name not given"),
         "error": request.json.get("error", "error not specified")
     }
