@@ -6,5 +6,5 @@ RUN yum -y update &&\
 
 ADD app.py /
 RUN chmod a+x /app.py
-
+EXPOSE 5000
 CMD ["/usr/bin/python", "/app.py"]
