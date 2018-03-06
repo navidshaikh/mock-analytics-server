@@ -10,10 +10,11 @@ def receive_register():
     if not request.json:
         abort(400)
     response = {
-            "email_ids": request.json.get("email_ids", "email ids not given"),
-            "git-sha": request.json.get("git-sha", "git-sha not given"),
-            "git-url": request.json.get("git-url", "git-url not given")
-            }
+        "email_ids": request.json.get("email_ids", "email ids not given"),
+        "git-sha": request.json.get("git-sha", "git-sha not given"),
+        "git-url": request.json.get("git-url", "git-url not given")
+    }
+    print "POST for /register API received with data {0}".format(response)
     return jsonify(response), 200
 
 
@@ -22,13 +23,13 @@ def receive_error():
     if not request.json:
         abort(400)
     response = {
-            "email_ids": request.json.get("email_ids", "email ids not given"),
-            "image-name": request.json.get("image-name", "image-name not given"),
-            "error": request.json.get("error", "error not specified")
-            }
+        "email_ids": request.json.get("email_ids", "email ids not given"),
+        "image-name": request.json.get("image-name", "image-name not given"),
+        "error": request.json.get("error", "error not specified")
+    }
+    print "POST for /scanner-error API received with data {0}".format(response)
     return jsonify(response), 200
 
 
 if __name__ == '__main__':
     app.run(debug=True)
-
