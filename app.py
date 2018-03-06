@@ -6,7 +6,7 @@ app = Flask("analytics")
 
 
 @app.route('/api/v1/register', methods=["POST"])
-def receive_post():
+def receive_register():
     if not request.json:
         abort(400)
     response = {
@@ -18,7 +18,7 @@ def receive_post():
 
 
 @app.route('/api/v1/scanner-error', methods=["POST"])
-def receive_post():
+def receive_error():
     if not request.json:
         abort(400)
     response = {
